@@ -1,0 +1,23 @@
+{
+  "name": "HumbleGS",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Glitchbone/HumbleGS",
+  "authors": [
+    "Adrien Glitchbone <adrien@glitchbone.com>"
+  ],
+  "description": "Responsive (and non-responsive) grid system",
+  "main": "dist/humblegs.css",
+  "keywords": [
+    "fluid",
+    "responsive",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

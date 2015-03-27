@@ -1,0 +1,147 @@
+@import "compass/reset/utilities";
+@import "compass/css3/box-sizing";
+@import "compass/utilities/general/clearfix";
+@import "compass/utilities/general/float";
+
+@import "variables";
+@import "extends";
+@import "mixins";
+@import "responsive-utilities";
+
+/* Set box-sizing */
+
+.#{$humble-gs-container-prefix},
+.#{$humble-gs-row-prefix}, 
+.#{$humble-gs-row-prefix}:after,
+.#{$humble-gs-row-prefix}:before {
+    
+    @include box-sizing(border-box);
+    
+}
+
+/* Container */
+
+.#{$humble-gs-container-prefix},
+.#{$humble-gs-container-prefix}-fluid, 
+.#{$humble-gs-container-prefix}-full,
+.#{$humble-gs-container-prefix}-fixed {
+    
+    @extend %humble-gs-container;
+
+}
+
+.#{$humble-gs-container-prefix}-full {
+	
+	padding-left: 0;
+	padding-right: 0;
+	
+}
+
+.#{$humble-gs-container-prefix} {
+        
+    max-width: $humble-gs-screen-lg-min;
+    
+	@media (max-width: $humble-gs-screen-lg-min - 1) {
+		max-width: $humble-gs-screen-md-min;
+	}
+
+	@media (max-width: $humble-gs-screen-md-min - 1) {
+		max-width: $humble-gs-screen-sm-min;
+	}
+
+}
+
+.#{$humble-gs-container-prefix}-fixed {
+    width: $humble-gs-screen-non-responsive + $humble-gs-gutter-width * 2;
+}
+
+/* Clearfix & box-model + list-style reset for ul support */
+
+.#{$humble-gs-row-prefix} {
+    
+    $margin: -$humble-gs-gutter-width / 2;
+    
+    @include pie-clearfix();
+    @include reset-list-style();
+    @include reset-box-model();
+    
+    margin-left: -$humble-gs-gutter-width / 2;
+	margin-right: -$humble-gs-gutter-width / 2;
+	
+	&-align-center, &-align-right {
+		
+		/* Remove whitespace between inline-block elements */
+		letter-spacing: -.25em;
+		
+		> [class*="#{$humble-gs-col-prefix}-"] {
+		
+			@extend %centered-column;
+		
+		}
+		
+	}
+	
+	&-align-center {
+		
+		text-align: center;
+
+	}
+	
+	&-align-right {
+		
+		text-align: right;
+
+	}
+    
+};
+
+/* Nested grid */
+
+.#{$humble-gs-row-prefix} > .#{$humble-gs-row-prefix} {
+    
+    clear: none;
+    float: left;
+    margin: 0 !important;
+    
+}
+
+/* Generate columns sizes */
+    
+@for $i from 0 to $humble-gs-cols+1 {
+
+	.#{$humble-gs-col-prefix}-xs-#{$i},
+	.#{$humble-gs-col-prefix}-sm-#{$i},
+	.#{$humble-gs-col-prefix}-md-#{$i},
+    .#{$humble-gs-col-prefix}-lg-#{$i},
+    .#{$humble-gs-col-prefix}-#{$i} {
+        @extend %humble-gs-column;
+    }
+
+}
+
+// Non responsive columns creation
+@include make-columns();
+
+@media only screen and (min-width: 0) {
+
+	@include make-columns(-xs);
+
+}
+
+@media (min-width: $humble-gs-screen-sm-min) {
+
+	@include make-columns(-sm);
+
+}
+
+@media (min-width: $humble-gs-screen-md-min) {
+
+	@include make-columns(-md);
+
+}
+
+@media (min-width: $humble-gs-screen-lg-min) {
+
+	@include make-columns(-lg);
+
+}

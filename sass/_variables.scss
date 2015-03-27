@@ -1,0 +1,17 @@
+$humble-gs-responsive-utilities: true;
+
+$humble-gs-cols: 12 !default;
+$humble-gs-col-prefix: 'col' !default;
+$humble-gs-row-prefix: 'row' !default;
+$humble-gs-container-prefix: 'container' !default;
+$humble-gs-gutter-width: 16px !default;
+
+$humble-gs-screen-sm: 720px !default;
+$humble-gs-screen-md: 940px !default;
+$humble-gs-screen-lg: 1140px !default;
+
+$humble-gs-screen-non-responsive: 960px !default;
+
+$humble-gs-screen-sm-min: $humble-gs-screen-sm + $humble-gs-gutter-width * 2;
+$humble-gs-screen-md-min: $humble-gs-screen-md + $humble-gs-gutter-width * 2;
+$humble-gs-screen-lg-min: $humble-gs-screen-lg + $humble-gs-gutter-width * 2;

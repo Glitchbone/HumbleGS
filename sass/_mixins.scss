@@ -1,0 +1,54 @@
+@mixin make-columns($class: "") {
+	
+	@for $i from 0 to $humble-gs-cols+1 {
+
+		$col-class: $humble-gs-col-prefix + $class + '-';
+		$value: percentage($i / $humble-gs-cols);
+		
+	    .#{$col-class}#{$i} {
+	        width: $value;
+	    }
+		
+	    .#{$col-class}offset-#{$i} {
+	        margin-left: $value;
+	    }
+		
+	    .#{$col-class}push-#{$i} {
+	        left: $value;
+	    }
+		
+	    .#{$col-class}pull-#{$i} {
+	        right: $value;
+	    }
+		
+	}
+	
+}
+
+@mixin responsive-visibility($parent) {
+    
+    #{$parent} {
+        display: block !important;
+    }
+    
+    table#{$parent} { 
+        display: table; 
+    }
+    
+    tr#{$parent} { 
+        display: table-row !important; 
+    }
+    
+    th#{$parent},
+    td#{$parent} { 
+        display: table-cell !important; 
+    }
+}
+
+@mixin responsive-invisibility($parent) {
+    
+    #{$parent} {
+        display: none !important;
+    }
+    
+}

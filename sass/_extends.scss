@@ -1,0 +1,35 @@
+/* Base container properties */
+
+%humble-gs-container {
+    
+    overflow: hidden;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: $humble-gs-gutter-width;
+	padding-right: $humble-gs-gutter-width;
+    
+}
+
+/* Base column properties */
+
+%humble-gs-column {
+	
+    @include box-sizing(border-box);
+
+    position: relative;
+    width: 100%;
+	padding-left: $humble-gs-gutter-width / 2;
+	padding-right: $humble-gs-gutter-width / 2;
+    min-height: 1px;
+    float: left;
+
+}
+
+%centered-column {
+	
+	display: inline-block;
+	float: none;
+	letter-spacing: normal;
+	text-align: left;
+	
+}
