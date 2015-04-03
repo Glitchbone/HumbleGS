@@ -67,31 +67,6 @@
     
     margin-left: -$humble-gs-gutter-width / 2;
 	margin-right: -$humble-gs-gutter-width / 2;
-	
-	&-align-center, &-align-right {
-		
-		/* Remove whitespace between inline-block elements */
-		letter-spacing: -.25em;
-		
-		> [class*="#{$humble-gs-col-prefix}-"] {
-		
-			@extend %centered-column;
-		
-		}
-		
-	}
-	
-	&-align-center {
-		
-		text-align: center;
-
-	}
-	
-	&-align-right {
-		
-		text-align: right;
-
-	}
     
 };
 
@@ -112,15 +87,11 @@
 	.#{$humble-gs-col-prefix}-xs-#{$i},
 	.#{$humble-gs-col-prefix}-sm-#{$i},
 	.#{$humble-gs-col-prefix}-md-#{$i},
-    .#{$humble-gs-col-prefix}-lg-#{$i},
-    .#{$humble-gs-col-prefix}-#{$i} {
+    .#{$humble-gs-col-prefix}-lg-#{$i} {
         @extend %humble-gs-column;
     }
 
 }
-
-// Non responsive columns creation
-@include make-columns();
 
 @media only screen and (min-width: 0) {
 
