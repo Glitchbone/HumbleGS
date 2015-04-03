@@ -9,11 +9,8 @@
 	        width: $value;
 	    }
 		
-	    .#{$col-class}offset-#{$i} {
-	        margin-left: $value;
-	    }
-		
-	    .#{$col-class}push-#{$i} {
+	    .#{$col-class}push-#{$i},
+        .#{$col-class}offset-#{$i} {
 	        left: $value;
 	    }
 		
