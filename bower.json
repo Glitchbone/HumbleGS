@@ -6,7 +6,7 @@
     "Adrien Glitchbone <adrien@glitchbone.com>"
   ],
   "description": "Responsive (and non-responsive) grid system",
-  "main": "dist/humblegs.css",
+  "main": "dist/humblegs.min.css",
   "keywords": [
     "fluid",
     "responsive",
