@@ -17,7 +17,7 @@ Or you can add humblegs.css manually to your project
 Usage
 =====
 
-See demo/index.html for usage example
+See [http://glitchbone.github.io/HumbleGS](http://glitchbone.github.io/HumbleGS) for usage example
 
 Author
 ======
